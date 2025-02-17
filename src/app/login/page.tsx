@@ -8,11 +8,7 @@ export default function LoginPage() {
 
     const handleLogin = async () => {
         console.log("Login page");
-        await signIn("credentials", {
-            username: "admin",
-            password: "password",
-            redirect: false,
-        });
+        await signIn('google');
         router.push("/dashboard");
     };
 

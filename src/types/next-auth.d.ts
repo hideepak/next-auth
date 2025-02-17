@@ -1,4 +1,5 @@
 import "next-auth";
+import { JWT } from "next-auth/jwt";
 
 declare module "next-auth" {
     interface Session {
@@ -7,7 +8,10 @@ declare module "next-auth" {
             name: string;
             email: string;
             image?: string;
+
         };
+        accessToken?: string; // ✅ Add Google Access Token to Session
+        idToken?: string; // ✅ Add Google ID Token to Session
     }
 
     interface User {
@@ -26,6 +30,7 @@ declare module "next-auth/jwt" {
             email: string;
             image?: string;
         };
+        accessToken?: string; // ✅ Add Access Token
+        idToken?: string; // ✅ Add ID Token
     }
 }
-
